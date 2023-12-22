@@ -1,0 +1,11 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^(.*)/$ /$1 [L,R]
+RewriteRule ^(.*)/[(0-9)]$ /$1 [L,R]
+RewriteRule ^(.*)\.html$ $1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
